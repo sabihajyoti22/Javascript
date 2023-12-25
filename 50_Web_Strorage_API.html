@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Strorage API</title>
+    <style>
+        *{
+            padding: 10px;
+        }
+        div{
+            padding: 0;
+        }
+        #reset-btn{
+            height: 40px;
+            width: 100px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <label for="font-size">
+        Select Font Size: <select name="font-size" id="font-size">
+            <option value="22px">22px</option>
+            <option value="28px">28px</option>
+            <option value="34px">34px</option>
+        </select>
+    </label>
+    <label for="bg-color">
+        Select Background Color: <select name="bg-color" id="bg-color">
+            <option value="Pink">Pink</option>
+            <option value="Orange">Orange</option>
+            <option value="Brown">Brown</option>
+        </select>
+    </label>
+
+    <button id="reset-btn">Reset</button>
+    <div id="div-sec">
+        <p id="para">
+            Sit at rebum ea accusam voluptua. Voluptua diam amet ipsum accusam voluptua amet lorem dolor et, dolor magna eirmod aliquyam eirmod gubergren magna, sed dolore erat elitr lorem gubergren, sed ipsum stet dolor eos voluptua, aliquyam sea justo accusam elitr lorem. Eos ipsum diam sadipscing dolor et dolor lorem diam, ut et dolor est voluptua ipsum erat clita duo, ipsum labore invidunt aliquyam ipsum consetetur, dolore sea sanctus sit dolor dolore dolor vero sanctus. No justo clita sit magna dolore, eos aliquyam nonumy aliquyam dolor justo ipsum dolor est, amet eos takimata elitr amet, ipsum et labore dolor et aliquyam sit sadipscing eirmod. Elitr sadipscing ut sea dolor sit sed. Ut sed labore tempor vero sadipscing gubergren. Dolore takimata sea sed labore ipsum elitr, diam no dolore aliquyam et vero amet lorem sit, ipsum dolore aliquyam est stet, erat sadipscing no no diam rebum accusam accusam sit labore. Et eirmod.
+        </p>
+    </div>
+
+    <script>
+        const fontSize = document.querySelector("#font-size");
+        const bgColor = document.querySelector("#bg-color");
+        const resetButton = document.querySelector("#reset-btn");
+        const para = document.querySelector("#div-sec #para");
+
+        para.style.fontSize = JSON.parse(localStorage.getItem("fontSize"));
+        para.style.bgColor = JSON.parse(sessionStorage.getItem("backgroungColor"));
+
+        resetButton.addEventListener("click", ()=>{
+            localStorage.clear();
+            sessionStorage.clear();
+            para.style.fontSize = JSON.parse(localStorage.getItem("fontSize"));
+            para.style.backgroundColor = JSON.parse(sessionStorage.getItem("backgroungColor"));
+        });
+
+        fontSize.addEventListener("change", (e)=>{
+            localStorage.setItem("fontSize",JSON.stringify(e.target.value));
+            console.log(e.target.value);
+            para.style.fontSize = JSON.parse(localStorage.getItem("fontSize"));
+        });
+
+        bgColor.addEventListener("change", (e)=>{
+            sessionStorage.setItem("backgroungColor",JSON.stringify(e.target.value));
+            para.style.backgroundColor = JSON.parse(sessionStorage.getItem("backgroungColor"));
+        })
+        
+    </script>
+</body>
+</html>

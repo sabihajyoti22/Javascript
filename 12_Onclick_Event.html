@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler to onclick event</title>
+</head>
+<body>
+    <button onclick="profilePicture()">Profile Picture</button>
+    <button onclick="coverPhoto()">Cover Photo</button>
+    <br>
+    <img src="" alt="">
+    <script>
+        var imgs = document.querySelector("img");
+        function profilePicture(){
+            imgs.src="Images/pp.jpg";
+            imgs.height="400";
+            imgs.width="300";
+        }
+        function coverPhoto(){
+            imgs.src="Images/cp.jpg";
+            imgs.height="400";
+            imgs.width="430";
+        }
+    </script>
+</body>
+</html>

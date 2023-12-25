@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+    <style>
+        .name{
+            color: cadetblue;
+            font-style: italic;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sabiha Nasrin Jyoti</h1>
+
+    <!--Multiple Event Listener-->
+
+    <h2>My name is </h2>
+
+    <button class="btn-class">Sabiha</button>
+    <button class="btn-class">Nasrin</button>
+    <button class="btn-class">Jyoti</button>
+    <button class="clear">Clear</button>
+
+    <!-- Keypress Listener -->
+
+    <h3>Enter your name: </h3>
+
+    <script>
+        var names = document.querySelector("h1");
+
+        names.addEventListener("mouseover",function(){
+            names.classList.add("name");
+        })
+        names.addEventListener("mouseout",function(){
+            names.classList.remove("name");
+        })
+
+        // Multiple Event Listener
+
+        var len = document.querySelectorAll(".btn-class").length;
+
+        for(var i=0; i<len; i++){
+            document.querySelectorAll(".btn-class")[i].addEventListener("click",function(){
+                var text = this.innerHTML;
+                document.querySelector("h2").innerHTML = document.querySelector("h2").innerHTML + text + " ";
+            });
+        }
+        document.querySelector(".clear").addEventListener("click",function(){
+            var text = " ";
+            document.querySelector("h2").innerHTML = "My name is" + text;
+        })
+
+        // Keypress Listener
+
+        document.addEventListener("keypress",function(){
+            var text = event.key;
+            document.querySelector("h3").innerHTML = document.querySelector("h3").innerHTML + text;
+        })
+    </script>
+</body>
+</html>

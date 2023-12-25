@@ -1,0 +1,1 @@
+export let text = "Hi from my module";

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+</head>
+<body>
+    <p>Enter a number from 5 to 10:</p>
+    <input type="text">
+    <button>Check</button>
+    <p id="error-massage"></p>
+    <script>
+        // try{
+        //     alert("Hi Everyone");
+        //     alert(x);
+        // }catch(err){
+        //     console.log(err);
+        // }finally{
+        //     alert("Bye Everyone");
+        // }
+
+        // Use of throw keyword
+
+        var num = document.querySelector("input");
+
+        document.querySelector("button").addEventListener("click",function(){
+            console.log(num.value);
+            try{
+                if(num.value < 5){
+                    throw "Input is too low";
+                }
+                else if(num.value > 10){
+                    throw "Input is too high";
+                }
+            }catch(err){
+                document.querySelector("#error-massage").innerHTML = err;
+            }
+        });
+    </script>
+</body>
+</html>

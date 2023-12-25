@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <script>
+        // Get
+        // axios.get('https://jsonplaceholder.typicode.com/posts')
+        //     .then((res) => console.log(res.data))
+        //     .catch((err) => console.log(err));
+
+        // Post
+        // axios.post('https://jsonplaceholder.typicode.com/posts',{
+        //     method: 'POST',
+        //     body: JSON.stringify({
+        //         title: 'foo',
+        //         body: 'bar',
+        //         userId: 1,
+        //     })
+        // })
+        //     .then((res) => console.log(res.data))
+        //     .catch((err) => console.log(err));
+
+        // Put
+        // axios.put('https://jsonplaceholder.typicode.com/posts/10',{
+        //     method: 'PUT',
+        //     body: JSON.stringify({
+        //         id: 10,
+        //         title: 'foo',
+        //         body: 'bar',
+        //         userId: 1,
+        //     })
+        // })
+        //     .then((res) => console.log(res.data))
+        //     .catch((err) => console.log(err));
+
+        // Patch
+        // axios.patch('https://jsonplaceholder.typicode.com/posts/1',{
+        //     method: 'PATCH',
+        //     body: JSON.stringify({
+        //         title: 'foo',
+        //     })
+        // })
+        //     .then((res) => console.log(res.data))
+        //     .catch((err) => console.log(err));
+
+        // Delete
+        axios.delete('https://jsonplaceholder.typicode.com/posts/1',{
+            method: 'DELETE'
+        })
+            .then((res) => console.log(res.data))
+            .catch((err) => console.log(err));
+    </script>
+</body>
+</html>

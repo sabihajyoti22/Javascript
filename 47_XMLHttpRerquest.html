@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calling API from JavaScript XMLHttpRequest</title>
+</head>
+<body>
+    <h1>Calling API from JavaScript</h1>
+    <script>
+        const makeRequest = (method, url, data)=>{
+            const xhr = new XMLHttpRequest();
+            xhr.open(method, url);
+            xhr.setRequestHeader("Content-type","application/json");
+            xhr.onload = ()=>{
+                let data = xhr.response;
+                console.log(JSON.parse(data));
+            }
+            xhr.send(JSON.stringify(data));
+        }
+        const getData = ()=>{
+            makeRequest("GET","https://jsonplaceholder.typicode.com/posts");
+        }
+        // getData()
+        const postData = () => {
+            makeRequest("POST","https://jsonplaceholder.typicode.com/posts",{
+                title: 'Posting Data',
+                body: 'Post',
+                userId: 1
+            });
+        }
+        // postData();
+        const updateData = () => {
+            makeRequest("PUT","https://jsonplaceholder.typicode.com/posts/1",{
+                id: 1,
+                title: 'Puting Data',
+                body: 'Put',
+                userId: 1
+            });
+        }
+        // updateData();
+        const updateSingleData = () => {
+            makeRequest("PATCH","https://jsonplaceholder.typicode.com/posts/1",{
+                title: "Patch"
+            });
+        }
+        // updateSingleData();
+        const daleteData = ()=>{
+            makeRequest("DELETE","https://jsonplaceholder.typicode.com/posts/1");
+        }
+        daleteData();
+    </script>
+</body>
+</html>

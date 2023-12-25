@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM Timing Events</title>
+</head>
+<body>
+    <button id="btn">Save</button>
+    <p id="massage"></p>
+    <p id="count"></p>
+    <script>
+        var btn = document.querySelector("#btn");
+        var msg = document.querySelector("#massage");
+        var counter = document.querySelector("#count");
+        var count = 1;
+        btn.addEventListener("click",()=>{
+            msg.innerHTML = "Massage is saved";
+
+            setTimeout(()=>{
+                msg.innerHTML = "";
+            },2000);
+
+            setInterval(()=>{
+                counter.innerHTML = count;
+                count++;
+            },1000)
+        })
+    </script>
+</body>
+</html>

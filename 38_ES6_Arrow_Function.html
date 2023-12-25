@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Arrow Function</title>
+</head>
+<body>
+    <script>
+        const massage = ()=> "Hi from arrow function"; //Don't need the return keword
+        console.log(massage());
+
+        const add = (x,y)=>{
+            return x+y;
+        }
+        console.log(add(20,30));
+        
+        //Arrow function with map and filter
+        var students = [
+            {
+                id : 136,
+                name : "Jyoti",
+                cgpa : 3.57
+            },
+            {
+                id : 106,
+                name : "Sabiha",
+                cgpa : 2.57
+            },
+            {
+                id : 130,
+                name : "Nasrin",
+                cgpa : 4.57
+            },
+            {
+                id : 100,
+                name : "XXX",
+                cgpa : 5.57
+            },
+        ];
+
+        // function showNames(){
+        //     return students.filter(function (x){
+        //         return x.cgpa>3.5;
+        //     }).map(function(x){
+        //         return x.name;
+        //     });
+        // }
+
+        const showNames = () => students.filter((x) => x.cgpa>3.5).map((x) => x.name);
+
+        console.log(showNames());
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Array</title>
+</head>
+<body>
+    <script>
+        var numbers = [15,20,25,30,35];
+        // var firstEvenNumber = numbers.find(x => x%2 === 0);
+        const findEvenNumber = (value,index,arr) => {
+            return value % 2 === 0;
+        }
+        var firstEvenNumber = numbers.find(findEvenNumber);
+        var firstEvenNumberIndex = numbers.findIndex(findEvenNumber);
+
+        console.log(firstEvenNumber);
+        console.log(firstEvenNumberIndex);
+
+        var studentInfo = [
+            {
+                id : 136,
+                cgpa : 3.57
+            },
+            {
+                id : 106,
+                cgpa : 3.67
+            },
+            {
+                id : 130,
+                cgpa : 3.37
+            },
+            {
+                id : 100,
+                cgpa : 3.87
+            }
+        ];
+        var findCGPA = studentInfo.find(x => x.cgpa > 3.5);
+        console.log(findCGPA);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Scroll Resize Toggle</title>
+</head>
+<body>
+    <details>
+        <summary>Sabiha Nasrin Jyoti</summary>
+        <p>Accusam est sanctus sanctus sea voluptua vero sadipscing, labore sed sea diam at tempor, dolores et consetetur sed tempor et.</p>
+    </details>
+    <script>
+        window.addEventListener("load",function(){
+            console.log("Loaded");
+        });
+
+        window.addEventListener("unload",function(){
+            console.log("Unloaded");
+        });
+
+        window.addEventListener("scroll",function(){
+            console.log("Scrolling");
+        });
+
+        window.addEventListener("resize",function(){
+            var height = this.outerHeight;
+            var width = this.outerWidth;
+            console.log(`Width: ${width}, Height: ${height}`);
+        });
+
+        document.querySelector("details").addEventListener("toggle",function(){
+            console.log("Toggled")
+        });
+    </script>
+</body>
+</html>

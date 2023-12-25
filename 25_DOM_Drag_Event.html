@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Drag Event</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            height: 200px;
+            width: 300px;
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <h1 id="h1" draggable="true">I am dragable</h1>
+    <script>
+        var div = document.querySelector("#div1");
+        var h1 = document.querySelector("#h1");
+
+        h1.addEventListener("dragstart",function(e){
+            e.dataTransfer.setData("text",e.target.id);
+        });
+        div.addEventListener("dragover",function(e){
+            e.preventDefault();
+        });
+        div.addEventListener("drop",function(e){
+            let id = e.dataTransfer.getData("text");
+            console.log(id);
+            div.appendChild(document.getElementById(id));
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>

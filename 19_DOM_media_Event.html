@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Media Event</title>
+</head>
+<body>
+    <video controls loop>
+        <source src="Videos/W S01E01 ESub HDTV 720p.mp4" type="video/mp4" >
+    </video>
+    <script>
+        var video = document.querySelector("video").addEventListener("canplay",function(){
+            console.log("canplay");
+        });
+
+        var video = document.querySelector("video").addEventListener("play",function(){
+            console.log("play");
+        });
+
+        var video = document.querySelector("video").addEventListener("playing",function(){
+            console.log("playing");
+        });
+
+        var video = document.querySelector("video").addEventListener("pause",function(){
+            console.log("pause");
+        });
+
+        var video = document.querySelector("video").addEventListener("ended",function(){
+            console.log("ended");
+        });
+
+        var video = document.querySelector("video").addEventListener("volumechange",function(){
+            console.log("volume changed");
+        });
+    </script>
+</body>
+</html>

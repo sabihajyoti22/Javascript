@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+    <script>
+        function student(name,age,cgpa,lang){
+            this.name = name;
+            this.age = age;
+            this.cgpa = cgpa;
+            this.lang = lang;
+
+            this.display = function(){
+                console.log(this.name);
+                console.log(this.age);
+                console.log(this.cgpa);
+                console.log(this.lang);
+            }
+        }
+        var student1 = new student("Sabiha",25,3.57,["Bang","Eng"]);
+        var student2 = new student("Jyoti",23,3.75,["Bang","Eng","Spanish","Franch"]);
+
+        student1.display();
+        student2.display();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

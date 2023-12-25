@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Keyboard Event</title>
+</head>
+<body>
+    <script>
+        document.addEventListener("keydown",function(e){
+            console.log(e.key);
+            console.log(e.keyCode);
+            console.log(e.code);
+            console.log(e.shiftKey);
+            console.log(e.ctrlKey);
+            console.log(e.repeat);
+        });
+    </script>
+</body>
+</html>

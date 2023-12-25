@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Focus Event</title>
+</head>
+<body>
+    <input type="text">
+
+    <script>
+        var input = document.querySelector("input");
+
+        input.addEventListener("focus",function(){
+            input.style.backgroundColor = "brown";
+            input.style.padding = "10px";
+        });
+        input.addEventListener("blur",function(e){
+            input.style.backgroundColor = "transparent";
+            input.style.padding = "0px";
+            input.value = e.target.value.toUpperCase();
+        });
+    </script>
+</body>
+</html>

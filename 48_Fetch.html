@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+<body>
+    <script>
+        // 4 ways to call api - XMLHttpRequest, fetch, axios, jQuery
+        // Fetch has replaced XMLHttpRequest
+        // fetch() - Global method for making HTTP request
+        // 2 ways to call - then, async wait
+
+        // + fetch() is easy to use compared to HttpRequest
+        // + fetch() returns promise
+        // - returned promise can only be handle network error
+        // - doesn't support all the older browser
+
+        // fetch('https://jsonplaceholder.typicode.com/posts/1')
+        // .then((response) => {
+        //     if(!response.ok){
+        //         const message = `Error: ${response.status}`;
+        //         throw new Error(message);
+        //     }
+        //     return response.json();
+        // })
+        // .then((json) => console.log(json))
+        // .catch((err) => console.log(err));
+
+        const makeRequest = async (url, config) => {
+            const res = await fetch(url, config);
+            if(!res.ok){
+                const message = `Error: ${response.status}`;
+                throw new Error(message);
+            }
+            const data = await res.json();
+            return data;
+        }
+        const getData = () => {
+            makeRequest('https://jsonplaceholder.typicode.com/posts/1')
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err));
+        }
+        // getData();
+        const postData = () => {
+            makeRequest('https://jsonplaceholder.typicode.com/posts',{
+                method: 'POST',
+                body: JSON.stringify({
+                    title: 'foo',
+                    body: 'bar',
+                    userId: 1,
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                }
+            })
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err));
+        } 
+        postData();
+    </script>
+</body>
+</html>

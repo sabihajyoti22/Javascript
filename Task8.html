@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8</title>
+    <script>
+        var scores = [85,90,25,65,15,100,45,55];
+        function highestScore(scores){
+            var max = scores[0];
+            for(var i=1; i<scores.length; i++){
+                if(max < scores[i]){
+                    max = scores[i];
+                }
+            }
+            console.log("Highest Score is: " + max);
+        }
+        highestScore(scores);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

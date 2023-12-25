@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector</title>
+</head>
+<body>
+    <a id="home" href="#">Home</a>
+    <ul>
+        <li><a href="#">Menu</a></li>
+        <li>About Us</li>
+        <li>Find Us</li>
+    </ul>
+    <div class="my-div">
+        <a href="#">Contact</a>
+    </div>
+
+    <script>
+        document.querySelector("#home").innerHTML="Changed Home";
+        document.querySelector("li a").innerHTML="Changed Menu";
+        document.querySelector(".my-div a").innerHTML="Changed Contact";
+        document.querySelectorAll("li")[2].innerHTML="Changed"
+    </script>
+</body>
+</html>

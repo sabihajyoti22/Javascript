@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+
+    <script>
+        var names =["Sabiha","Nasrin","Jyoti","Samantha","Saeef","Ovi"]
+        console.log(names);
+        names.push("Bean");
+        console.log(names);
+        names.pop();
+        console.log(names);
+        var country1 =["Bangladesh","England"];
+        var country2 =["Bangladesh","USA","Japan"];
+        console.log(country1.concat(country2));
+        //shift is opposite of pop
+        names.shift();
+        console.log(names);
+        //unshift is opposite of push
+        names.unshift("Era");
+        console.log(names);
+        names.splice(2,0,"Khijir");
+        console.log(names);
+        console.log(names.sort());
+        console.log(names.reverse());
+        //numbers sorting
+        var number = [20,5,10,50,30,1,100,90];
+        number.sort(function(a,b){
+            return a-b;
+        });
+        console.log(number);
+    </script>
+    
+</head>
+<body>
+    <h1>Array</h1>
+</body>
+</html>

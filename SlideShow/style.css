@@ -1,0 +1,28 @@
+.slideshow-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    width: 100%;
+    background-color: cadetblue;
+}
+.slideshow-elements{
+    text-align: center;
+    color:white;
+}
+.slideshow-element{
+    font-size: 70px;
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.6s;
+}
+.slideshow-elements .current{
+    font-size: 70px;
+    position: absolute;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.6s;
+}
+.slideshow-element i h1{
+    
+
+}

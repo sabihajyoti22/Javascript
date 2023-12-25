@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing CSS Dynamically</title>
+    <style>
+        .my-name{
+            color: chocolate;
+            font-style: italic;
+            text-shadow: 5px 5px 5px gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sabiha Nasrin Jyoti</h1>
+
+    <button onclick="addStyle()">Add Style</button>
+    <button onclick="rmvStyle()">Remove Style</button>
+
+    <script>
+        var name1 = document.querySelector("h1");
+
+        function addStyle(){
+            name1.classList.add("my-name");
+        }
+
+        function rmvStyle(){
+            name1.classList.remove("my-name");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Classes</title>
+</head>
+<body>
+    <script>
+        class Student{
+            constructor(id , name){
+                this.id = id;
+                this.name = name;
+            }
+            set setName(name) {
+                this.name = name;
+            }
+            get getName(){
+                return this.name;
+            }
+        }
+        var s1 = new Student(136,"Sabiha Nasrin Jyoti");
+        // s1.setName = "Jyoti"
+        console.log(s1.getName); 
+    </script>
+</body>
+</html>

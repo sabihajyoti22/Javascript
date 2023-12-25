@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <style>
+        #my-canvas{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="my-canvas" height="500px" width="500px"></canvas>
+    <script>
+        var c = document.querySelector("#my-canvas");
+        var ctx = c.getContext("2d");
+
+        console.log(ctx);
+        //ctx.strokeRect(10,10,20,20); //without fill
+        ctx.strokeStyle = "black";
+        ctx.strokeRect(42,92,400,300);
+        ctx.fillStyle="green";
+        ctx.fillRect(42,92,400,300);
+
+        var centerX = c.width/2;
+        var centerY = c.height/2;
+
+        ctx.beginPath();
+        ctx.arc(centerX,centerY,80,0,360,false);
+        ctx.fillStyle="red";
+        ctx.fill();
+        ctx.stroke();
+        
+    </script>
+</body>
+</html>

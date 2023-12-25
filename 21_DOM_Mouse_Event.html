@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Mouser Event</title>
+</head>
+<body>
+
+    <button>Click me</button>
+
+    <script>
+        //Mouse Event doesn't work with <html> <head> <meta> <title> <br> <style> <script> <iframe> <param> <base> <bdo> this tags
+        document.querySelector("button").addEventListener("click",function(){
+            console.log("Mouse clicked");
+        });
+
+        document.querySelector("button").addEventListener("dblclick",function(){
+            console.log("Mouse double clicked");
+        });
+
+        document.querySelector("button").addEventListener("mousedown",function(){
+            console.log("Mouse down");
+        });
+
+        document.querySelector("button").addEventListener("mouseup",function(){
+            console.log("Mouse up");
+        });
+
+        document.querySelector("button").addEventListener("mouseenter",function(){
+            console.log("Mouse enter");
+        });
+
+        document.querySelector("button").addEventListener("mouseleave",function(){
+            console.log("Mouse leave");
+        });
+
+        document.querySelector("button").addEventListener("mousemove",function(e){
+            console.log("Mouse move: "+e.clientX+" "+e.clientY);
+        });
+
+        document.querySelector("button").addEventListener("mouseover",function(){
+            console.log("Mouse over");
+        });
+    </script>
+    
+</body>
+</html>

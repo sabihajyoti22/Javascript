@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Audio</title>
+    <style>
+        .btn-class{
+            background-color: cadetblue;
+            color: aliceblue;
+            border: none;
+            border-radius: 5px;
+            height: 50px;
+            width: 140px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 20px;
+            margin-left: 260px;
+            margin-top: 50px;
+        }
+        .anim{
+            box-shadow: 5px 5px 5px rgb(143, 189, 191);
+        }
+        div{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="songs">Play Songs</h1>
+    </div>
+    
+    <button class="btn-class">Heart Stereo</button>
+    <button class="btn-class">Levitating</button>
+    <button class="btn-class">Rockabye</button>
+
+    <script>
+        var len = document.querySelectorAll(".btn-class").length;
+
+        var audio1 = new Audio("Audios/Heart_Stereo.mp3");
+        var audio2 = new Audio("Audios/Levitating.mp3");
+        var audio3 = new Audio("Audios/Rockabye.mp3");
+        
+        for(var i=0; i<len; i++){
+            document.querySelectorAll(".btn-class")[i].addEventListener("click",function(){
+                var text = this.innerHTML;
+                playAudio(text);
+
+                this.classList.add("anim");
+                setTimeout(() => {
+                    this.classList.remove("anim"); 
+                }, 1000);
+                
+            });
+        }
+
+        function playAudio(text){
+                switch(text){
+                    case "Heart Stereo": 
+                                    document.querySelector("div h1").innerHTML = text;
+                                    audio2.pause();
+                                    audio3.pause();
+                                    audio1.play();
+                                    break;
+                    case "Levitating": 
+                                    document.querySelector("div h1").innerHTML = text;
+                                    audio1.pause();
+                                    audio3.pause();
+                                    audio2.play();
+                                    break;
+                    case "Rockabye": 
+                                    document.querySelector("div h1").innerHTML = text;
+                                    audio1.pause();
+                                    audio2.pause();
+                                    audio3.play();
+                                    break;
+                }
+            }
+        
+    </script>
+</body>
+</html>

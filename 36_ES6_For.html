@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 For of and For in</title>
+</head>
+<body>
+    <script>
+        var names = ["Sabiha","Nasrin","Jyoti"];
+        for(let i of names){
+            console.log(i);
+        }
+        var student = {
+            id : 136,
+            name : "Sabiha Nasrin Jyoti",
+            cgpa : 3.57
+        }
+        for(let x in student){
+            console.log(`${x} : ${student[x]}`);
+        }
+
+        var numbers = [10,20,30,40,50];
+        numbers.forEach((x,index,arr)=>{
+            console.log(arr[index]=x+5);
+        });
+        
+    </script>
+</body>
+</html>

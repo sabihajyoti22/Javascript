@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Borrowing</title>
+</head>
+<body>
+    <h1>Call Apply Bind</h1>
+    <script>
+        let name = {
+            firstName: "Bruce",
+            lastName: "Lee",
+        }
+
+        let printFullName = function (state = "Dhaka", country = "Bangladesh"){
+                console.log(this.firstName +" "+ this.lastName +" "+state+" "+country)
+            }
+
+        let name1 = {
+            firstName: "Jhon",
+            lastName: "Doe"
+        }
+
+        printFullName.call(name1)
+
+        printFullName.apply(name1, ["New York", "America"]) //This accept parameters as an array list
+
+        const getBind = printFullName.bind(name1)
+        console.log(getBind)
+        getBind()
+    </script>
+</body>
+</html>

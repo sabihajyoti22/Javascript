@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM onChange Event</title>
+</head>
+<body>
+    <!-- Input -->
+    <label for="name">
+        Name: <input type="text" name="name" id="nm">
+    </label>
+
+    <!-- Checkbox -->
+    <div>
+        <h3>Programming Languages</h3>
+        <label for="programs">
+            <input type="checkbox" name="programs" id="c" value="c">C
+        </label>
+
+        <label for="programs">
+            <input type="checkbox" name="programs" id="java" value="java">Java
+        </label>
+    </div>
+
+    <!-- Select -->
+    <label for="Department">
+        Department: <select name="Department" id="cse">
+            <option value="CSE">CSE</option>
+            <option value="EEE">EEE</option>
+            <option value="IPE">IPE</option>
+        </select>
+    </label>
+
+    <script>
+        // Input
+        var input = document.querySelector("input[name=name]");
+        input.addEventListener("change",changeHandler);
+
+        function changeHandler(e){
+            console.log(e.target.value)
+        }
+
+        // Checkbox
+        var checkboxes = document.querySelectorAll("input[name=programs]");
+        
+        Array.from(checkboxes).map(program => {
+            program.addEventListener("change",programHandler);
+        });
+
+        function programHandler(e){
+            if(e.target.checked){
+                console.log(e.target.value);
+            }
+        }
+
+        // Select
+        var selects = document.querySelector("select");
+
+        selects.addEventListener("change",selectHandler);
+
+        function selectHandler(e){
+            console.log(e.target.value)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM Popup Boxes</title>
+</head>
+<body>
+    <script>
+        // alert("Error here!!!");
+
+        // (function confirmSomething(){
+        //     var confirmMessage = confirm("Are you sure");
+
+        //     if(confirmMessage == true){
+        //         console.log("Yes");
+        //     }
+        //     else{
+        //         console.log("No");
+        //     }
+        // })();
+
+        (function promptSomething(){
+            var h1 = document.createElement("h1");
+            let text;
+
+            var inputs = prompt("Enter your name: ");
+
+            if(inputs == null || inputs == ""){
+                text = "No name";
+            }
+            else{
+                text = "Welcome " + inputs;
+            }
+            var textNode = document.createTextNode(text);
+            h1.appendChild(textNode);
+            document.body.appendChild(h1);
+        })();
+    </script>
+</body>
+</html>

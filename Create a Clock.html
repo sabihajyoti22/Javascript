@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<body>
+    <button id="btn">Start</button>
+    <p id="message"></p>
+    <script>
+        var btn = document.querySelector("#btn");
+        var msg = document.querySelector("#message");
+
+        btn.addEventListener("click",startClock);
+
+        function startClock(){
+            var date = new Date();
+
+            var hour = date.getHours();
+            var minutes = date.getMinutes();
+            var seconds = date.getSeconds();
+
+            minutes = formatTime(minutes);
+            seconds = formatTime(seconds);
+
+            msg.innerHTML = hour +":"+ minutes +":"+ seconds;
+
+            setInterval(startClock,1000);
+        }
+        function formatTime(value){
+            if(value < 10){
+                value = "0" + value;
+            }
+            return value;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Create Add Remove</title>
+</head>
+<body>
+    <a href="https://www.google.com/">Visit Google</a>
+
+    <div id="my-div" style="background-color: rgba(255, 0, 0, 0.6);">
+        <h1>Header 1</h1>
+    </div>
+    <script>
+        var div1 = document.querySelector("#my-div");
+
+        // Finding Element
+        var link = document.querySelector("a");
+        link.style.textDecoration="none";
+        link.style.fontSize="50px";
+        link.style.color="green";
+
+        //Creating Element
+        var header2 = document.createElement("h1");
+        var text2 = document.createTextNode("Header 2");
+
+        var header = document.createElement("h1");
+        var text = document.createTextNode("Header");
+
+        var header3 = document.createElement("h1");
+        var text3 = document.createTextNode("Header 3");
+
+        //Adding Element
+        header2.appendChild(text2);
+        div1.appendChild(header2);
+
+        header.appendChild(text);
+        div1.insertBefore(header,header2);
+
+        header3.appendChild(text3);
+        div1.appendChild(header3);
+        
+        //Removing Element
+        div1.removeChild(header3);
+    </script>
+</body>
+</html>

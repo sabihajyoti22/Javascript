@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Object Literals</title>
+</head>
+<body>
+    <script>
+        function Person (name, cgpa) {
+            return { // returns object
+                name, 
+                cgpa
+            }
+        }
+        console.log(Person("Sabiha Nasrin Jyoti", 3.57));
+
+        // Concise Method (function inside object)
+        var massage = {
+            'body name'(){
+                return "Hi, I am object function" //Here we can use space in function name
+            } 
+        }
+        console.log(massage['body name']());
+    </script>
+</body>
+</html>

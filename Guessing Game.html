@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <script>
+        var wonNumber = 0;
+        var lostNumber = 0;
+        var guessNumber;
+        var randomNumber;
+        for(var i = 0; i<5; i++){
+            guessNumber = parseInt(prompt("Enter a number from 1 to 5"));
+            randomNumber = Math.floor(Math.random()*5)+1;
+            
+            if(guessNumber === randomNumber){
+                console.log("You have won");
+                wonNumber++;
+            }
+            else{
+                console.log("You have lost");
+                lostNumber++; 
+            }
+        }
+        document.write("You have won "+wonNumber+" times<br>");
+        document.write("You have lost "+lostNumber+" times");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

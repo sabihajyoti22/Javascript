@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Destructuring</title>
+</head>
+<body>
+    <script>
+        // Array Destructuring
+        var numbers = [10,20,30,40,50]
+        var [num1,num2,num3,num4,num5] = numbers;
+        console.log(num1);
+        console.log(num2);
+
+        //Swap Variables
+        var a = 200, b = 100;
+        var [a,b] = [b,a];
+        console.log(`a: ${a} b: ${b}`);
+
+        // Object Destuctutring
+        var studentInfo = {
+            id : 136,
+            fullName : "Sabiha Nasrin Jyoti",
+            cgpa : 3.57
+        }
+        const {id , fullName} = studentInfo; //Have to have same name as object properties
+        console.log(id);
+        console.log(fullName);
+
+        // Nested Object Destructuring
+        var students = {
+            id : 136,
+            fullName : "Sabiha Nasrin Jyoti",
+            cgpa : 3.57,
+            languages : {
+                native : "Bangla",
+                beginer : "English"
+            }
+        }
+
+        const {languages} = students;
+        console.log(languages.native);
+
+        // Destructuring Function Parameters
+        function getStudentInfo({id,fullname}){
+            console.log(id);
+            console.log(fullName);
+        }
+        getStudentInfo(studentInfo);
+    </script>
+</body>
+</html>
