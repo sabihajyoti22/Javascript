@@ -8,6 +8,130 @@
 </head>
 <body>
     <script>
+        // With Callback
+        // function stepOne(callback) {
+        //     console.log("Step one completed")
+        //     callback()
+        // }
+
+        // function stepTwo(callback) {
+        //     setTimeout(() => {
+        //         console.log("Step two completed")
+        //         callback()
+        //     }, 1000);
+        // }
+
+        // function stepThree(callback) {
+        //     console.log("Step three completed")
+        //     callback()
+        // }
+
+        // stepOne(() => {
+        //     stepTwo(() => {
+        //         stepThree(() => {
+        //             console.log('Done')
+        //         })
+        //     })
+        // })
+
+        // With Promise
+        // function stepOne() {
+        //     return new Promise((resolve, reject) => {
+        //         resolve('Step one completed')
+        //     })
+        // }
+
+        // function stepTwo() {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve('Step two completed')
+        //         }, 1000)
+        //     })
+        // }
+
+        // function stepThree() {
+        //     return new Promise((resolve, reject) => {
+        //         resolve('Step three completed')
+        //     })
+        // }
+
+        // stepOne().then((res) => {
+        //     console.log(res)
+        //     return stepTwo()
+        // }).then((res) => {
+        //     console.log(res)
+        //     return stepThree()
+        // }).then((res) => {
+        //     console.log(res)
+        //     console.log('Done')
+        // })
+
+        // (async function check() {
+        //     try {
+        //         const step1 = await stepOne()
+        //         console.log(step1)
+        //         const step2 = await stepTwo()
+        //         console.log(step2)
+        //         const step3 = await stepThree()
+        //         console.log(step3)
+        //         console.log('Done')
+        //     } catch (error) {
+
+        //     }
+        // })()
+
+
+        // function stepOne(callback) {
+        //     setTimeout(() => callback(null, 'Step One Completed'), 1000);
+        // }
+
+        // function stepTwo(callback) {
+        //     setTimeout(() => callback(null, 'Step Two Completed'), 1000);
+        // }
+
+        // function stepThree(callback) {
+        //     setTimeout(() => callback(null, 'Step Three Completed'), 1000);
+        // }
+
+        // stepOne((err, result) => {
+        //     if (err) return console.error(err);
+        //     console.log(result);
+        //     stepTwo((err, result) => {
+        //         if (err) return console.error(err);
+        //         console.log(result);
+        //         stepThree((err, result) => {
+        //             if (err) return console.error(err);
+        //             console.log(result);
+        //         });
+        //     });
+        // });
+
+        // const double = (value) => Promise.resolve(value * 2)
+
+        // const addTen = (value) => Promise.resolve(value + 10)
+
+        // const multiplyByThree = (value) => Promise.resolve(value * 3)
+
+        // const value = 5;
+
+        // double(value)
+        //     .then(addTen)
+        //     .then(multiplyByThree)
+        //     .then((result) => {
+        //         console.log(result);
+        //     });
+
+        // const delays = [1000, 2000, 3000];
+
+        // const fetchSimulator = (url, delay) => {
+        //     return new Promise(resolve => setTimeout(() => resolve(`Data from ${url}`), delay));
+        // };
+
+        // for (let delay of delays) {
+        //     fetchSimulator(delay, delay).then((res) => {
+        //         console.log(res)
+        //     })
+        // }
         // Promise has three part: pending, resolve(if promise is fullfiled), rejected
         var promise1 = new Promise((resolve, reject)=>{
             var completePromise1 = true;
